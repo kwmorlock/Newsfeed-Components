@@ -113,40 +113,60 @@ const data = [
 
 */
 
-function createArticle(title, date, firstParagraph, secondParagraph, thirdParagraph, span) {
+// function createArticle(title, date, firstParagraph, secondParagraph, thirdParagraph, span) {
+  function createComponent(obj){
   const article = document.createElement('div');
   const title = document.createElement('h2');
   const date = document.createElement('p');
   const firstParagraph = document.createElement('p');
   const secondParagraph = document.createElement('p');
   const thirdParagraph = document.createElement('p');
-  const eButton = document.createElement('span');
+  const expandButton = document.createElement('span');
 
 
   // title.textContent = title;
   // date.textContent = date;
   // eButton.setAttribute(btn);
 
-  article.append(articleTitle);
-  article.append(articleDate);
-  article.append(articlefirstParagraph);
-  article.append(articlesecondParagraph);
-  article.append(articlethirdParagraph);
-  article.append(articleeButton);
+  article.appendChild(title);
+  article.appendChild(date);
+  article.appendChild(firstParagraph);
+  article.appendChild(secondParagraph);
+  article.appendChild(thirdParagraph);
+  article.appendChild(expandButton);
 
-article.classList.add('date');
+  article.classList.add('article');
+  date.classList.add('date');
+  expandButton.classList.add('expandButton');
 
-  articleTitle.textContent = title;
-  articleDate.textContent = date;
-  articlefirstParagraph.textContent = firstParagraph;
-  articlesecondParagraph.textContent = secondParagraph
-  articlethirdParagraph.textContent = thirdParagraph;
-  articleeButton.textContent = eButton;
 
-  span.addEventListener('click', (event) => {
+
+  //articleTitle.textContent = object.date;
+
+  title.textContent = obj.title;
+date.textContent = obj.date;
+  firstParagraph.textContent = obj.firstParagraph;
+  secondParagraph.textContent = obj.secondParagraph
+  thirdParagraph.textContent = obj.thirdParagraph;
+  expandButton.textContent = obj.expandButton;
+
+  expandButton.addEventListener('click', event => {
+    article.classList.toggle('article-open');
   })
 
   return article;
 
 }
+const articles =document.querySelector('.articles');
 
+data.map(mapinfo => {
+  articles.appendChild(createComponent(mapinfo))
+})
+
+
+// const meowmap = data.map('article' => createComponent(article));
+// const articletwo = document.querySelector('.articles');
+// meowmap.forEach(article => articletwo.append(article) }
+// data.map((article) => {
+//   return articles.append(article(article.title, article.date, article.firstParagraph, article.secondParagraph, article.thirdParagraph))
+// })
