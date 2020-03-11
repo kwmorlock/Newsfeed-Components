@@ -113,4 +113,40 @@ const data = [
 
 */
 
-function createArticle(title, date, firstParagraph, secondParagraph, thirdParagraph)
+function createArticle(title, date, firstParagraph, secondParagraph, thirdParagraph, span) {
+  const article = document.createElement('div');
+  const title = document.createElement('h2');
+  const date = document.createElement('p');
+  const firstParagraph = document.createElement('p');
+  const secondParagraph = document.createElement('p');
+  const thirdParagraph = document.createElement('p');
+  const eButton = document.createElement('span');
+
+
+  // title.textContent = title;
+  // date.textContent = date;
+  // eButton.setAttribute(btn);
+
+  article.append(articleTitle);
+  article.append(articleDate);
+  article.append(articlefirstParagraph);
+  article.append(articlesecondParagraph);
+  article.append(articlethirdParagraph);
+  article.append(articleeButton);
+
+article.classList.add('date');
+
+  articleTitle.textContent = title;
+  articleDate.textContent = date;
+  articlefirstParagraph.textContent = firstParagraph;
+  articlesecondParagraph.textContent = secondParagraph
+  articlethirdParagraph.textContent = thirdParagraph;
+  articleeButton.textContent = eButton;
+
+  span.addEventListener('click', (event) => {
+  })
+
+  return article;
+
+}
+
