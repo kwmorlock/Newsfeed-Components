@@ -178,3 +178,5 @@ data.map(mapinfo => {
 // data.map((article) => {
 //   return articles.append(article(article.title, article.date, article.firstParagraph, article.secondParagraph, article.thirdParagraph))
 // })
+
+
