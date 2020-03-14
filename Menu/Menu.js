@@ -33,3 +33,48 @@ let menuItems = [
   Step 6: add the menu component to the DOM.
   
 */
+
+
+// function meowMenu(menu) {
+//   const menu =document.createElement('div')
+//   menu.classList.add('menu');
+
+//   const meowmeow = document.createElement('ul')
+//   menu.appendChild('meowmeow');
+
+//   meowMenu.forEach(i => {
+//     const items = document.createElement('li');
+//     items.textContent = 
+//   })
+// }
+
+
+
+
+
+function meowmenu(meow) {
+  const meowdiv = document.createElement('div')
+  const meowul = document.createElement('ul')
+  meow.forEach((item) => {
+    const meowli = document.createElement('li')
+    meowli.textContent = item
+    meowul.append(meowli)
+  }) 
+
+
+meowdiv.classList.add('menu')
+
+button.addEventListener('click', event => {
+  meowdiv.classList.toggle('menu--open')
+  
+meowdiv.append(meowul)
+} )
+
+return meowdiv
+}
+
+const button = document.querySelector('.menu-button')
+const header = document.querySelector('.header')
+
+header.append(meowmenu(menuItems))
+
